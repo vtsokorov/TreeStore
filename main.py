@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class TreeStore:
     def __init__(self, items):
         self.tree = {}
@@ -74,7 +75,6 @@ class TreeStore:
             result.append(item)
 
         return result
-
 
 
 ITEMS = [
