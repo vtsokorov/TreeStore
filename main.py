@@ -65,11 +65,9 @@ class TreeStore:
         )
 
     def getAllParents(self, id):
-        result = []
-
         item = self._find(self.tree, id)
-        result.append(item)
 
+        result = []
         while item['parent'] != 'root':
             item = self._find(self.tree, item['parent'])
             result.append(item)
@@ -98,5 +96,5 @@ if __name__ == '__main__':
 
     print(tree.getChildren(4))
 
-    print(tree.getAllParents(4))
+    print(tree.getAllParents(7))
 
