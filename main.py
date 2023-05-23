@@ -37,16 +37,14 @@ class TreeStore:
             if value['children']:
                 result = self._find(value['children'], id, name)
 
-                if id in result:
-                    return result[id][name]
+                if result:
+                    return result
 
         elif isinstance(data, list):
             for value in data:
                 result = self._find(value, id, name)
 
-                if id in result:
-                    return result[id][name]
-                elif result:
+                if result:
                     return result
 
         return result
