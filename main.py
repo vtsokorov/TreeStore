@@ -92,9 +92,11 @@ if __name__ == '__main__':
 
     print(tree.getAll())
 
-    print(tree.getItem(4))
+    print(tree.getItem(7))
 
     print(tree.getChildren(4))
+
+    print(tree.getChildren(5))
 
     print(tree.getAllParents(7))
 
