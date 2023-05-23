@@ -32,11 +32,13 @@ class TreeStore:
 
         result = {}
         if isinstance(data, dict):
-            for key, value in data.items():
+            ((_, value),) = data.items()
+
+            if value['children']:
                 result = self._find(value['children'], id, name)
 
                 if id in result:
-                    return result
+                    return result[id][name]
 
         elif isinstance(data, list):
             for value in data:
