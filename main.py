@@ -16,9 +16,9 @@ class TreeStore:
 
     def _fetch(self, data, result=[]):
         if isinstance(data, dict):
-            for key, value in data.items():
-                result.append(value['item'])
-                self._fetch(value['children'], result)
+            ((_, value),) = data.items()
+            result.append(value['item'])
+            self._fetch(value['children'], result)
 
         elif isinstance(data, list):
             for value in data:
